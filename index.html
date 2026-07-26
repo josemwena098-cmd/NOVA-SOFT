@@ -3,216 +3,167 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TEKNOVA MOVIES - Pakua Bure</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-  :root { 
-    --bg: #0a0a0a;           
-    --card: #121212;         
-    --accent: #D4AF37;       /* DHABU */
-    --accent2: #B8860B;      
-    --text: #f5f5f5;         
-    --border: rgba(212,175,55,0.2); 
-  }
-
-  *{margin:0;padding:0;box-sizing:border-box; scroll-behavior: smooth;}
-  body { background: var(--bg); color: var(--text); font-family: 'DM Sans'; display: flex; flex-direction: column; min-height: 100vh; }
-
-  /* HEADER NA LOGO */
-  header { 
-    padding: 15px 5%; 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    position: sticky; 
-    top:0; 
-    background:rgba(10,10,10,0.95); 
-    backdrop-filter: blur(15px); 
-    z-index: 100; 
-    border-bottom: 1px solid var(--border); 
-  }
-  .logo { display: flex; align-items: center; gap: 12px; }
-  .logo img { height: 45px; border-radius: 8px; } 
-  .logo h1 { font-family: 'Syne'; font-size: 20px; color: var(--accent); letter-spacing: 1px; }
-  .search-box { background: var(--card); border: 1px solid var(--border); padding: 10px 15px; border-radius: 8px; color: var(--text); width: 250px; outline: none; }
-  .search-box:focus { border-color: var(--accent); }
-
-  /* HERO NDOGO */
-  .hero { padding: 40px 5% 20px; text-align: center; }
-  .hero h2 { font-family: 'Syne'; font-size: 28px; color: var(--accent); text-shadow: 0 0 10px rgba(212,175,55,0.3); }
-  .hero p { max-width: 600px; margin: 10px auto 0; opacity: 0.7; font-size: 14px; }
-
-  /* SECTIONS */
-  .container { padding: 20px 5% 40px; flex: 1; }
-  .section-title { font-family: 'Syne'; font-size: 20px; margin-bottom: 15px; color: var(--accent); }
-
-  /* GRID YA MOVIE NDOGO */
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 15px; } 
-  .card { 
-    background: var(--card); 
-    border-radius: 10px; 
-    overflow: hidden; 
-    border: 1px solid var(--border); 
-    transition: 0.3s; 
-  }
-  .card:hover { 
-    transform: translateY(-5px); 
-    border-color: var(--accent); 
-    box-shadow: 0 5px 20px rgba(212,175,55,0.2); 
-  }
-  .card img { width: 100%; height: 220px; object-fit: cover; } 
-  .card-body { padding: 10px; }
-  .card h3 { font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .btn { 
-    display: block; 
-    width: 100%; 
-    background: linear-gradient(135deg, var(--accent), var(--accent2)); 
-    color: #000; 
-    text-align: center; 
-    padding: 8px; 
-    border-radius: 6px; 
-    text-decoration: none; 
-    font-weight: 700; 
-    margin-top: 8px; 
-    font-size: 12px; 
-    transition: 0.2s;
-  }
-  .btn:hover { opacity: 0.9; }
-
-  .loading { display: none; }
-
-  /* FOOTER */
-  footer {
-    background: #000;
-    border-top: 1px solid var(--border);
-    text-align: center;
-    padding: 25px 20px;
-    margin-top: 40px;
-  }
-  footer p {
-    color: var(--accent);
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 1px;
-  }
-
-  /* SCROLL TO TOP BUTTON */
-  #scrollTop {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: linear-gradient(135deg, var(--accent), var(--accent2));
-    color: #000;
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 22px;
-    font-weight: 700;
-    cursor: pointer;
-    display: none; /* Imefichwa mwanzoni */
-    z-index: 999;
-    box-shadow: 0 0 15px rgba(212,175,55,0.4);
-    transition: 0.3s;
-  }
-  #scrollTop:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 25px rgba(212,175,55,0.6);
-  }
-
-  @media(max-width: 768px){ 
-    .search-box{display:none} 
-    .grid{grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));} 
-  }
-</style>
+<title>NOVA SOFT | Huduma za Teknolojia Tanzania</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
-<header>
-  <div class="logo">
-    <img src="https://i.postimg.cc/c1KDdXgf/file-0000052a471f4b1ee0c79fc058395.png" alt="TEKNOVA LOGO">
-    <h1>MOVIES</h1>
+<!-- HEADER -->
+<header class="navbar">
+  <div class="logo-area">
+    <img src="https://i.postimg.cc/0j82LhQJ/file-00000e2b482439d30f322b52abb4b.png" class="logo-icon">
+    <div>
+      <div class="logo-small">NOVA SOFT</div>
+      <div class="logo-big">NOVA<span>SOFT</span></div>
+    </div>
   </div>
-  <input type="text" id="search" class="search-box" placeholder="Tafuta movie...">
+  <i class="fa-solid fa-bars menu-icon" id="menuBtn"></i>
 </header>
 
-<section class="hero">
-  <h2>Pakua Movies Bure</h2>
-  <p>Movies zote mpya na za zamani. Download moja kwa moja kwenye simu yako bila shida.</p>
-</section>
+<!-- MOBILE MENU FULL SCREEN KAMA TEKNOVA -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="menu-top">
+    <div class="logo-area">
+      <img src="https://i.postimg.cc/0j82LhQJ/file-00000e2b482439d30f322b52abb4b.png" class="logo-icon">
+      <div>
+        <div class="logo-small">NOVA SOFT</div>
+        <div class="logo-big">NOVA<span>SOFT</span></div>
+      </div>
+    </div>
+    <i class="fa-solid fa-xmark close-btn" id="closeBtn"></i>
+  </div>
 
-<div class="container">
-  <h3 class="section-title">Movies Zote</h3>
-  <div class="grid" id="movieGrid"></div>
+  <div class="lang-switch">
+    <span><i class="fa-solid fa-globe"></i></span>
+    <button class="lang-btn active">🇹🇿 Kiswahili</button>
+    <button class="lang-btn">🇬🇧 English</button>
+  </div>
+
+  <nav class="menu-links">
+    <a href="#hero">Nyumbani</a>
+    <a href="#services">Huduma</a>
+    <a href="#about">Kuhusu</a>
+    <a href="#blog">Blog</a>
+    <a href="#contact">Wasiliana</a>
+  </nav>
+
+  <a href="https://wa.me/255611378027" target="_blank" class="btn-menu-whatsapp">Wasiliana Nasi</a>
+
+  <div class="menu-contact">
+    <h4>Wasiliana</h4>
+    <p><i class="fa-brands fa-whatsapp"></i> +255 611 378 027</p>
+    <p><i class="fa-solid fa-location-dot"></i> Tanzania</p>
+  </div>
 </div>
 
-<footer>
-  <p>© NOVA SOFT 2026</p>
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="bg-logo"></div>
+  <div class="badge"><i class="fa-solid fa-bolt"></i> TUPO TAYARI KUHUDUMIA BIASHARA YAKO</div>
+  <h1>Suluhisho la <br><span>Teknolojia & Dijitali.</span></h1>
+  <p class="subtitle">Mifumo</p>
+  <a href="#services" class="btn-main">HUDUMA TUNAZOTOA <i class="fa-solid fa-arrow-right"></i></a>
+  <a href="#blog" class="btn-outline">SOMA BLOG</a>
+</section>
+
+<!-- HUDUMA -->
+<section id="services" class="services-section">
+  <div class="badge-green">Huduma Zetu</div>
+  <h2>Huduma Bora <br>za <span>Teknolojia</span></h2>
+  <div class="services-grid">
+    <div class="service-card"><div class="icon-box"><i class="fa-solid fa-graduation-cap"></i></div><h3>Mafunzo ya Software</h3><p>Jifunze jinsi ya kutumia software mbalimbali za simu na kompyuta.</p></div>
+    <div class="service-card"><div class="icon-box"><i class="fa-solid fa-wrench"></i></div><h3>Kurekebisha Simu</h3><p>Huduma za kitaalamu za kurekebisha simu zilizovunjika.</p></div>
+    <div class="service-card"><div class="icon-box"><i class="fa-solid fa-microchip"></i></div><h3>Hardware Repair</h3><p>Tunarekebisha matatizo yote ya hardware.</p></div>
+    <div class="service-card"><div class="icon-box"><i class="fa-solid fa-mobile-screen"></i></div><h3>Flashing & Unlocking</h3><p>Huduma za ku-flash simu, ku-unlock network locks.</p></div>
+    <div class="service-card"><div class="icon-box"><i class="fa-solid fa-shield-halved"></i></div><h3>Data Recovery</h3><p>Tunarudisha data zilizopotea kutoka simu au kompyuta.</p></div>
+    <div class="service-card"><div class="icon-box"><i class="fa-solid fa-bolt"></i></div><h3>Speed Optimization</h3><p>Tunafanya simu au kompyuta yako iende haraka.</p></div>
+  </div>
+</section>
+
+<!-- KUHUSU SISI -->
+<section id="about" class="about-section">
+  <div class="badge-green">Kuhusu Sisi</div>
+  <h2>Wataalamu wa <br><span>Teknolojia Tanzania</span></h2>
+  <p class="about-text">NOVA SOFT ilianzishwa na dhamira kubwa ya kuleta elimu ya teknolojia kwa Watanzania wote bila kujali umri au kiwango cha elimu. Tunaamini kwamba kila mtu anastahili kupata uelewa wa teknolojia za kisasa zinazobadilisha ulimwengu leo.</p>
+  <p class="about-text">Timu yetu ina wataalamu wenye uzoefu wa miaka mingi katika fani mbalimbali za teknolojia - kutoka software development, hardware repair, network engineering, hadi cybersecurity.</p>
+  <p class="about-text">Tunatoa mafunzo ya kina yanayokufanya uelewe si tu jinsi ya kutumia teknolojia, bali pia jinsi inavyofanya kazi. Huduma zetu za kurekebisha simu na kompyuta ni za haraka na za kuaminika.</p>
+  <p class="about-text">Jiunge na familia ya NOVA SOFT leo na ugundue ulimwengu mpya wa fursa za teknolojia. Sisi tunaamini katika nguvu ya elimu ya teknolojia kubadilisha maisha ya watu na jamii nzima.</p>
+  <div class="features-list">
+    <div class="feature"><i class="fa-solid fa-circle-check"></i> Mafunzo ya kina ya teknolojia za simu na kompyuta</div>
+    <div class="feature"><i class="fa-solid fa-wand-magic-sparkles"></i> Huduma za haraka na za kuaminika siku zote</div>
+    <div class="feature"><i class="fa-solid fa-heart"></i> Bei nafuu na wazi bila gharama za siri</div>
+    <div class="feature"><i class="fa-solid fa-headset"></i> Msaada wa baada ya huduma bila kikomo</div>
+    <div class="feature"><i class="fa-solid fa-award"></i> Wataalamu wenye uzoefu wa miaka mingi</div>
+    <div class="feature"><i class="fa-solid fa-shield"></i> Dhamana ya ubora wa kazi zetu zote</div>
+    <div class="feature"><i class="fa-solid fa-circle-check"></i> Ushauri wa bure kabla ya huduma</div>
+    <div class="feature"><i class="fa-solid fa-clock"></i> Huduma za dharura zinapatikana 24/7</div>
+  </div>
+  <div class="stats">
+    <div class="stat-box"><i class="fa-solid fa-users"></i><h3>500+</h3><p>Wateja Walioridhika</p></div>
+    <div class="stat-box"><i class="fa-solid fa-award"></i><h3>5+</h3><p>Miaka ya Uzoefu</p></div>
+    <div class="stat-box"><i class="fa-solid fa-clock"></i><h3>24/7</h3><p>Msaada wa Wateja</p></div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section id="blog" class="blog-section">
+  <div class="badge-green">Blog Yetu</div>
+  <h2>Makala Mpya <br>za <span>Teknolojia</span></h2>
+  <div class="blog-grid">
+    <div class="blog-card"><div class="blog-tag">Tips & Tricks</div><h3>Jinsi ya Kuongeza Battery Life</h3><p>Jifunze mbinu 15 bora za kuongeza muda wa battery.</p><div class="blog-meta"><span><i class="fa-regular fa-calendar"></i> Julai 26, 2026</span><span><i class="fa-regular fa-clock"></i> 5 dakika</span></div><div class="blog-author"><i class="fa-regular fa-user"></i> NOVA TECH</div></div>
+    <div class="blog-card"><div class="blog-tag">Uchambuzi</div><h3>Android vs iOS 2026</h3><p>Ulinganisho wa kina kati ya mifumo hii miwili mikubwa.</p><div class="blog-meta"><span><i class="fa-regular fa-calendar"></i> Julai 25, 2026</span><span><i class="fa-regular fa-clock"></i> 8 dakika</span></div><div class="blog-author"><i class="fa-regular fa-user"></i> NOVA TECH</div></div>
+  </div>
+  <a href="#" class="btn-outline" style="margin-top:30px">Tazama Makala Zote <i class="fa-solid fa-arrow-right"></i></a>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="badge-green">Wasiliana Nasi</div>
+  <h2>Piga Simu au <br><span>Tuma WhatsApp</span></h2>
+  <a href="https://wa.me/255611378027" target="_blank" class="btn-whatsapp-main"><i class="fa-brands fa-whatsapp"></i> +255 611 378 027</a>
+  <div class="contact-boxes">
+    <div class="contact-box"><div class="contact-icon"><i class="fa-brands fa-whatsapp"></i></div><div><p class="contact-label">WhatsApp</p><p class="contact-number">+255 611 378 027</p></div></div>
+    <div class="contact-box"><div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div><div><p class="contact-label">Mahali</p><p class="contact-number">Tanzania</p></div></div>
+    <div class="contact-box"><div class="contact-icon"><i class="fa-regular fa-clock"></i></div><div><p class="contact-label">Masaa ya Kazi</p><p class="contact-number">Jumatatu - Jumamosi: 8:00 - 18:00<br>Jumapili: 10:00 - 16:00</p></div></div>
+  </div>
+  <div class="contact-logo"><img src="https://i.postimg.cc/0j82LhQJ/file-00000e2b482439d30f322b52abb4b.png" alt="NOVA SOFT"></div>
+  <div class="contact-info"><h3 class="contact-brand">NOVA SOFT</h3><p>Mtaalamu wa Teknolojia</p></div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-col"><div class="footer-logo"><div class="footer-icon"><i class="fa-solid fa-mobile-screen"></i></div><h3>NOVA<span>SOFT</span></h3></div><p>NOVA SOFT ni kituo chako cha kuaminika cha kujifunza teknolojia za simu na kompyuta Tanzania.</p></div>
+    <div class="footer-col"><h4>Viungo vya Haraka</h4><ul><li><a href="#hero">Nyumbani</a></li><li><a href="#services">Huduma</a></li><li><a href="#about">Kuhusu</a></li><li><a href="#blog">Blog</a></li><li><a href="#contact">Wasiliana</a></li></ul></div>
+    <div class="footer-col"><h4>Huduma Zetu</h4><ul><li><a href="#">Mafunzo ya Software</a></li><li><a href="#">Kurekebisha Simu</a></li><li><a href="#">Hardware Repair</a></li><li><a href="#">Flashing & Unlocking</a></li><li><a href="#">Data Recovery</a></li></ul></div>
+    <div class="footer-col"><h4>Wasiliana</h4><ul class="footer-contact"><li><i class="fa-brands fa-whatsapp"></i> +255 611 378 027</li><li><i class="fa-solid fa-location-dot"></i> Tanzania</li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© NOVA SOFT 2026. Haki zote zimehifadhiwa.</p><div class="footer-links"><a href="#">Sera ya Faragha</a><a href="#">Masharti ya Matumizi</a></div></div>
 </footer>
 
-<!-- SCROLL TO TOP BUTTON -->
-<button id="scrollTop">↑</button>
-
-<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
 <script>
-const firebaseConfig = {
-  apiKey: "AIzaSyDPZx7OPw2D6J533kNX-T302RoqPGAPz7k",
-  authDomain: "teknova-c9d6e.firebaseapp.com",
-  databaseURL: "https://teknova-c9d6e-default-rtdb.firebaseio.com",
-  projectId: "teknova-c9d6e",
-  storageBucket: "teknova-c9d6e.firebasestorage.app",
-  messagingSenderId: "47075576420",
-  appId: "1:47075576420:web:29d0588bee99558d866d71"
-};
-firebase.initializeApp(firebaseConfig);
-const db = firebase.database();
+  const menuBtn = document.getElementById('menuBtn');
+  const closeBtn = document.getElementById('closeBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
 
-let allMovies = [];
-
-function displayMovies(movies){
-  const grid = document.getElementById('movieGrid');
-  grid.innerHTML = '';
-  if(movies.length === 0) { return; }
-  movies.forEach(m => {
-    const directLink = `https://drive.google.com/uc?export=download&id=${m.driveId}`;
-    grid.innerHTML += `
-      <div class="card">
-        <img src="${m.poster}" alt="${m.title}" onerror="this.src='https://via.placeholder.com/150x220/121212/D4AF37?text=No+Image'">
-        <div class="card-body">
-          <h3>${m.title}</h3>
-          <a href="${directLink}" download class="btn">⬇️ Download</a>
-        </div>
-      </div>
-    `;
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.add('active');
+    document.body.style.overflow = 'hidden'; // zuia scroll
   });
-}
+  
+  closeBtn.addEventListener('click', () => {
+    mobileMenu.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  });
 
-db.ref('movies').on('value', (snapshot) => {
-  allMovies = [];
-  snapshot.forEach(child => { allMovies.push(child.val()); });
-  displayMovies(allMovies);
-});
-
-// SEARCH FUNCTION
-document.getElementById('search').addEventListener('keyup', (e) => {
-  const term = e.target.value.toLowerCase();
-  const filtered = allMovies.filter(m => m.title.toLowerCase().includes(term));
-  displayMovies(filtered);
-});
-
-// SCROLL TO TOP JS
-const scrollBtn = document.getElementById('scrollTop');
-window.onscroll = function() {
-  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-    scrollBtn.style.display = "block";
-  } else {
-    scrollBtn.style.display = "none";
-  }
-};
-scrollBtn.onclick = function() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-};
+  document.querySelectorAll('.menu-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    });
+  });
 </script>
+
 </body>
-</html>
+  </html>
